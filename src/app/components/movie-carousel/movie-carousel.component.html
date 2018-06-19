@@ -1,0 +1,23 @@
+<h1 class="title animated fadeIn">{{title}}</h1>
+<hr>
+<div class='carousel carousel-animated carousel-animate-slide ' data-autoplay="true" data-delay="5000" data-size="4">
+    <div class='carousel-container'>
+        <a class='carousel-item' *ngFor="let movie of movies; let i =index" (click)="verDetalle(movie)">
+            <figure class="image is-2by3  animated zoomIn">
+                <img [src]=" movie.poster_path | noimages ">
+                <div class="title">{{ movie.title}}</div>
+
+            </figure>
+        </a>
+    </div>
+    <div class="carousel-navigation is-overlay">
+        <div class="carousel-nav-left">
+            <i class="fa fa-chevron-left" aria-hidden="true">
+                    </i>
+        </div>
+        <div class="carousel-nav-right">
+            <i class="fa fa-chevron-right" aria-hidden="true">
+            </i>
+        </div>
+    </div>
+</div>

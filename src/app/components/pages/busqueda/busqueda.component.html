@@ -1,0 +1,20 @@
+<section class="hero is-primary  backimg animated fadeIn">
+    <div class="hero-body">
+        <div class="section ">
+            <div class="field is-grouped is-grouped-centered">
+                <p class="control is-expanded animated zoomIn">
+                    <input #termino (keyup)="buscar(termino.value)" class="input is-medium " type="text" placeholder="Find a Movies">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section">
+    <div class="container">
+
+        <app-loading *ngIf="loading"></app-loading>
+
+        <app-movie-card *ngIf="!loading" [movies]="movies"></app-movie-card>
+    </div>
+</div>

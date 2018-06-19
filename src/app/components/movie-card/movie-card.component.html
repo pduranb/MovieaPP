@@ -1,0 +1,18 @@
+<div class="card-columns animated fadeIn">
+    <a (click)="verDetalle(movie)" class="card pointerCard" *ngFor="let movie of movies">
+        <div class="card-image">
+            <figure class="image ">
+                <img [src]="movie.poster_path| noimages" alt="Placeholder image">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content has-text-centered">
+                    <p class="title is-4">{{movie.title}}</p>
+
+                </div>
+            </div>
+
+        </div>
+    </a>
+</div>
