@@ -31,14 +31,15 @@
             <div class="navbar-end is-hidden-mobile">
                 <a class="navbar-item">
                     <div class="field is-grouped">
-                        <p class="control is-expanded">
-                            <input class="input" type="text" placeholder="Find a movies">
+                        <p class=" control is-expanded ">
+                            <input #termino class="input " type="text " placeholder="Find a movies ">
                         </p>
-                        <p class="control">
-                            <a class="button is-info">
+                        <p class="control ">
+                            <a class="button is-info" [routerLink]="['/search',termino.value]">
                                         Search
-                                    </a>
+                                </a>
                         </p>
+
                     </div>
                 </a>
             </div>

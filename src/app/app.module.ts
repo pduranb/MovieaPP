@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -35,9 +36,10 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     BrowserModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
   ],
-  providers: [MovieService, DatePipe, ],
+  providers: [MovieService, DatePipe ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

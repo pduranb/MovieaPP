@@ -3,7 +3,7 @@
         <div class="section ">
             <div class="field is-grouped is-grouped-centered">
                 <p class="control is-expanded animated zoomIn">
-                    <input #termino (keyup)="buscar(termino.value)" class="input is-medium " type="text" placeholder="Find a Movies">
+                    <input [(ngModel)]="busqueda" name="busqueda" (keyup)="buscar()" class="input is-medium " type="text" placeholder="Find a Movies">
                 </p>
             </div>
         </div>

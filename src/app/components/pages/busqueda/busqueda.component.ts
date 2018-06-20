@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../../providers/movie.service';
+import { ActivatedRoute } from '@angular/router';
 declare var bulmaCarousel: any;
 
 @Component({
@@ -10,17 +11,28 @@ declare var bulmaCarousel: any;
 export class BusquedaComponent implements OnInit {
   movies: any[] = [];
   loading: boolean;
-  constructor(private _movieservice: MovieService) {}
+  busqueda = '';
+  constructor(private _movieservice: MovieService, private router: ActivatedRoute) {
+    this.router.params.subscribe( parm => {
+      if (parm['text']) {
+        this.busqueda = parm['text'];
+        this.buscar();
+      } else {
+        return;
+      }
+    });
+  }
 
   ngOnInit() {
   }
-  buscar(termino: string) {
+  buscar() {
     this.loading = true;
-    this._movieservice.getMovie(termino)
+    if (this.busqueda.length > 0) {
+      this._movieservice.getMovie(this.busqueda)
         .subscribe( data => {
-          console.log(data);
           this.movies = data;
           this.loading = false;
         });
+    }
   }
 }
